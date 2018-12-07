@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>EasyTrip | Search</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link href="css/misc.css" rel="stylesheet">
+  <script src="js_css/js1.js"></script>
+  <link rel="stylesheet" type="text/css" href="js_css/style.css">
+  <style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+        width: 60%;
+        height: 60%;
+    }
+    </style>
+
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-dark fixed-top">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="profile.html">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="LandingPage.html">Active Trips</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="calendar.html">Calendar</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Logout</a>
+				</li>
+			</ul>
+		</div>
+		<a class="fixed-top navbar-brand" href="LandingPage.html">
+			<img src="img/Logo.png" alt="Logo" class="logo">
+		</a>
+	</nav>
+
+  </br></br>
+  <!-- <p class="greet"> Bon Voyage, <span id="getName"> Stranger </span>! </p> -->
+  <a onclick="goBack()">
+		<img src="img/back.png" class="back" alt="back">
+	</a>
+
+  <h1 id="titleFont">
+    Your trip in
+    <span style="font-weight:bold" id="getPlace"></span>!
+  </h1>
+
+  <!-- Search form -->
+  <div class="content">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Where?" id="toSearch">
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="button" onclick=result() id="forEnter"></button>
+      </div>
+    </div>
+  </div>
+
+  </br></br>
+
+<h2>Recomended Activities For You</h2>
+	<h5> From your tags <span id="getTags" class="recTags"></span> </h5>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="places/americanmuseum.html"><img class="result" src="img/search/americanmuseum.jpg" style="height: 300px; width:300px;">
+					<p>American Museum</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/centralpark.html"><img class="result" src="img/search/centralpark.jpg" style="height: 300px; width:300px;">
+					<p>Central Park</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/metromuseum.html"><img class="result" src="img/search/metromuseum.jpg" style="height: 300px; width:300px;">
+					<p>Metro Museum</p>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<a href="places/modernmuseum.html"><img class="result" src="img/search/modernmuseum.jpg" style="height: 300px; width:300px;">
+					<p>Modern Museum</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/statueofliberty.html"><img class="result" src="img/search/statue.jpg" style="height: 300px; width:300px;">
+					<p>Statue of Liberty</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/timessquare.html"><img class="result" src="img/search/timessquare.jpg" style="height: 300px; width:300px;">
+					<p>Time Square</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<!-- <script src="js_css/updateLS.js"></script> -->
+<script src="js_css/js1.js"></script>
+<script>
+  if (localStorage.getItem("Uplace")) {
+    document.getElementById("getPlace").innerHTML = localStorage.getItem("Uplace");
+  } else {
+    document.getElementById("getPlace").innerHTML = "NONE";
+  }
+</script>
+</html>
